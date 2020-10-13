@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+click = "==7.0"
+itsdangerous = "==1.1.0"
+Flask = "==1.1.1"
+Flask-FlatPages = "==0.7.1"
+Frozen-Flask = "==0.15"
+Jinja2 = "==2.11.1"
+Markdown = "==3.2.1"
+MarkupSafe = "==1.1.1"
+PyYAML = "==5.3"
+Werkzeug = "==1.0.0"
+python-dotenv = "*"
+
+[requires]
+python_version = "3.8"
