@@ -1,30 +1,30 @@
 // Defines map markers and their functions
 
-var markerDefault = {
+const markerDefault = {
     radius: 8,
     weight: 2,
     opacity: 1,
     fillOpacity: 0.5
 };
 
-var markerHighlight = {
+const markerHighlight = {
     radius: 10,
     weight: 3,
     opacity: 1,
     fillOpacity: 0.75
 };
 
-function highlightDot(e) {
+let highlightDot = (e) => {
     var layer = e.target;
     layer.setStyle(markerHighlight);
 };
 
-function resetDotHighlight(e) {
+let resetDotHighlight = (e) => {
     var layer = e.target;
     layer.setStyle(markerDefault);
 };
 
-function onEachDot(feature, layer) {
+let onEachDot = (feature, layer) => {
     layer.on({
         mouseover: highlightDot,
         mouseout: resetDotHighlight
