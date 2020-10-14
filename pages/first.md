@@ -1,4 +1,4 @@
-title: My First Blog
+title: Example Blog Title
 date: 2020-02-23
 category: general
 

@@ -1,20 +1,50 @@
- // The first parameter are the coordinates of the center of the map
+// The first parameter are the coordinates of the center of the map
 // The second parameter is the zoom level
-var map = L.map('map').setView([40.712, -74.006], 11);
+var map = L.map('map').setView([42.362504, -71.083372], 10);
 
-markers = [[40.712, -74.006], [41.713, -74.007]]
+// Set coffee shop dataset to variable coffeeShops
+// This is GeoJSON
+var coffeeShops = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Dunkin Donuts",
+                "address": "1 Broadway #1, Cambridge, MA 02142",
+                                "latitude": 42.362504,
+                "longitude": -71.083372
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-71.083372, 42.362504]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Starbucks",
+                "address": "6 Cambridge Center, Cambridge, MA 02142",
+                                "latitude": 42.363884,
+                "longitude": -71.087749
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-71.087749, 42.363884]
+            }
+        }
+    ]
+};
 
-// function pinMarker(marker, index) {
-//     L.marker(marker).addTo(map)
-//     .bindPopup(`<strong>Pin ${index}</strong>`).openPopup();
-// }
+// add coffee shop GeoJSON to map as layer
+L.geoJson(coffeeShops, {
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.name);
+    }
+}).addTo(map);
 
-// markers.forEach(pinMarker(marker, index))
-
-L.marker([41.712, -74.006]).addTo(map)
-    .bindPopup(`<strong>Pin One</strong>`).openPopup();
-L.marker([40.713, -74.007]).addTo(map)
-    .bindPopup(`<strong>Pin Two</strong>`).openPopup();
+// L.marker([41.712, -74.006]).addTo(map)
+//     .bindPopup(`<strong>Pin One</strong>`).openPopup();
 
 // {s}, {z}, {x} and {y} are placeholders for map tiles
 // {x} and {y} are the x/y of where you are on the map
