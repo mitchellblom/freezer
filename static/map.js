@@ -40,41 +40,6 @@ var coffeeShops = {
     ]
 };
 
-// Functions to attach styles and popups to the marker layer
-
-
-// function highlightDot(e) {
-//     var layer = e.target;
-//     layer.setStyle(markerHighlight);
-// };
-
-// function resetDotHighlight(e) {
-//     var layer = e.target;
-//     layer.setStyle(markerDefault);
-// };
-
-// function onEachDot(feature, layer) {
-//     layer.on({
-//         mouseover: highlightDot,
-//         mouseout: resetDotHighlight
-//     });
-//     layer.bindPopup(
-//     `<table style="width:150px">
-//         <tbody>
-//             <tr>
-//                 <td>
-//                     <div><b>${feature.properties.name}</b></div>
-//                 </td>
-//             </tr>
-//             <tr>
-//                 <td>
-//                     <div><b>${feature.properties.address}</b></div>
-//                 </td>
-//             </tr>
-//         </tbody>
-//     </table>`);
-// };
-
 // Displaying the data on the map
 
 L.geoJson(coffeeShops, {
