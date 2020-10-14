@@ -1,3 +1,5 @@
+import { markerDefault, markerHighlight } from './markers.js';
+
 // The first parameter are the coordinates of the center of the map
 // The second parameter is the zoom level
 var map = L.map('map').setView([42.362504, -71.083372], 10);
@@ -12,8 +14,9 @@ var coffeeShops = {
             "properties": {
                 "name": "Dunkin Donuts",
                 "address": "1 Broadway #1, Cambridge, MA 02142",
-                                "latitude": 42.362504,
-                "longitude": -71.083372
+                "latitude": 42.362504,
+                "longitude": -71.083372,
+                "Colour": "#0000FF"
             },
             "geometry": {
                 "type": "Point",
@@ -25,8 +28,9 @@ var coffeeShops = {
             "properties": {
                 "name": "Starbucks",
                 "address": "6 Cambridge Center, Cambridge, MA 02142",
-                                "latitude": 42.363884,
-                "longitude": -71.087749
+                "latitude": 42.363884,
+                "longitude": -71.087749,
+                "Colour": "#0000FF"
             },
             "geometry": {
                 "type": "Point",
@@ -36,15 +40,40 @@ var coffeeShops = {
     ]
 };
 
-// add coffee shop GeoJSON to map as layer
+// Functions to attach styles and popups to the marker layer
+
+function highlightDot(e) {
+    var layer = e.target;
+    layer.setStyle(markerHighlight);
+};
+
+function resetDotHighlight(e) {
+    var layer = e.target;
+    layer.setStyle(markerDefault);
+};
+
+function onEachDot(feature, layer) {
+    layer.on({
+        mouseover: highlightDot,
+        mouseout: resetDotHighlight
+    });
+    layer.bindPopup('<table style="width:150px"><tbody><tr><td><div><b>name:</b></div></td><td><div>' + feature.properties.GPSId + '</div></td></tr><tr class><td><div><b>year:</b></div></td><td><div>' + feature.properties.DateStart + '</div></td></tr></tbody></table>');
+};
+
+// Displaying the data on the map
+
 L.geoJson(coffeeShops, {
-    onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.name);
-    }
+    style: function(feature) {
+        return {color: feature.properties.Colour};
+    },
+    pointToLayer: function(feature, latlng) {
+        return new L.CircleMarker(latlng, markerDefault);
+    },
+    onEachFeature: onEachDot
 }).addTo(map);
 
-// L.marker([41.712, -74.006]).addTo(map)
-//     .bindPopup(`<strong>Pin One</strong>`).openPopup();
+// Init a map scale
+L.control.scale().addTo(map);
 
 // {s}, {z}, {x} and {y} are placeholders for map tiles
 // {x} and {y} are the x/y of where you are on the map
