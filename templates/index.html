@@ -17,7 +17,7 @@
     <!-- map logic -->
     <script src="{{url_for('static', filename='map.js')}}" type="module"></script>
 
-    <!-- blogroll -->
+    <!-- blogroll from markdown files -->
     <div style="float: right; margin: 1%;">
         {% for page in pages %}
         <tr>
@@ -25,7 +25,7 @@
                 <a href="{{ page.path }}.html"> {{ page.title }}</a>
             </td>
         </tr>
-      {% endfor %}
+        {% endfor %}
     </div>
   
 </table>

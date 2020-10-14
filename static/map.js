@@ -1,5 +1,5 @@
 import { markerDefault, onEachDot } from './markers.js';
-import { pinsGeoJson } from './pinsGeoJson.js'
+import pinsGeoJson from './pinsGeoJson.js'
 
 let firstPinProps = pinsGeoJson.features[0].properties
 let defaultCoords = [firstPinProps.latitude, firstPinProps.longitude]

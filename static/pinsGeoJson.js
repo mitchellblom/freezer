@@ -1,4 +1,4 @@
-const pinsGeoJson = {
+export default {
     "type": "FeatureCollection",
     "features": [
         {
@@ -30,6 +30,4 @@ const pinsGeoJson = {
             }
         }
     ]
-};
-
-export { pinsGeoJson }
+}
