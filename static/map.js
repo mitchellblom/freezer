@@ -1,8 +1,8 @@
-import { markerDefault, markerHighlight } from './markers.js';
+import { markerDefault, onEachDot } from './markers.js';
 
 // The first parameter are the coordinates of the center of the map
 // The second parameter is the zoom level
-var map = L.map('map').setView([42.362504, -71.083372], 10);
+var map = L.map('map').setView([42.362504, -71.083372], 13);
 
 // Set coffee shop dataset to variable coffeeShops
 // This is GeoJSON
@@ -42,23 +42,38 @@ var coffeeShops = {
 
 // Functions to attach styles and popups to the marker layer
 
-function highlightDot(e) {
-    var layer = e.target;
-    layer.setStyle(markerHighlight);
-};
 
-function resetDotHighlight(e) {
-    var layer = e.target;
-    layer.setStyle(markerDefault);
-};
+// function highlightDot(e) {
+//     var layer = e.target;
+//     layer.setStyle(markerHighlight);
+// };
 
-function onEachDot(feature, layer) {
-    layer.on({
-        mouseover: highlightDot,
-        mouseout: resetDotHighlight
-    });
-    layer.bindPopup('<table style="width:150px"><tbody><tr><td><div><b>name:</b></div></td><td><div>' + feature.properties.GPSId + '</div></td></tr><tr class><td><div><b>year:</b></div></td><td><div>' + feature.properties.DateStart + '</div></td></tr></tbody></table>');
-};
+// function resetDotHighlight(e) {
+//     var layer = e.target;
+//     layer.setStyle(markerDefault);
+// };
+
+// function onEachDot(feature, layer) {
+//     layer.on({
+//         mouseover: highlightDot,
+//         mouseout: resetDotHighlight
+//     });
+//     layer.bindPopup(
+//     `<table style="width:150px">
+//         <tbody>
+//             <tr>
+//                 <td>
+//                     <div><b>${feature.properties.name}</b></div>
+//                 </td>
+//             </tr>
+//             <tr>
+//                 <td>
+//                     <div><b>${feature.properties.address}</b></div>
+//                 </td>
+//             </tr>
+//         </tbody>
+//     </table>`);
+// };
 
 // Displaying the data on the map
 
@@ -80,7 +95,7 @@ L.control.scale().addTo(map);
 // {z} is the zoom level
 // {s} is the subdomain of cartodb
 var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 });
 
 // Now add the layer onto the map

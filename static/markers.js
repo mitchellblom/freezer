@@ -1,4 +1,4 @@
-// Marker definitions
+// Defines map markers and their functions
 
 var markerDefault = {
     radius: 8,
@@ -14,4 +14,36 @@ var markerHighlight = {
     fillOpacity: 0.75
 };
 
-export {markerDefault, markerHighlight}
+function highlightDot(e) {
+    var layer = e.target;
+    layer.setStyle(markerHighlight);
+};
+
+function resetDotHighlight(e) {
+    var layer = e.target;
+    layer.setStyle(markerDefault);
+};
+
+function onEachDot(feature, layer) {
+    layer.on({
+        mouseover: highlightDot,
+        mouseout: resetDotHighlight
+    });
+    layer.bindPopup(
+    `<table style="width:150px">
+        <tbody>
+            <tr>
+                <td>
+                    <div><b>${feature.properties.name}</b></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div><b>${feature.properties.address}</b></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>`);
+};
+
+export {markerDefault, onEachDot}
