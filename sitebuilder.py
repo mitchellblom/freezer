@@ -21,9 +21,10 @@ def index():
 
 @app.route("/<path:path>.html")
 def page(path):
-    print("View function activated!")
-    page = pages.get_or_404(path)
-    return render_template("page.html", page=page)
+    if path:
+        page = pages.get_or_404(path)
+        return render_template('index.html', pages=pages, page=page)
+    return render_template('index.html', pages=pages)
 
 
 @freezer.register_generator
