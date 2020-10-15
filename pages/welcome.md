@@ -1,0 +1,11 @@
+title: Welcome to Becoming the Atlas
+date: 2020-10-15
+category: welcome
+
+Here is the site where I write about things and stuff. This is the welcome page formatted like a blog post to default back to.
+There is another line. And another sentence. The sleeping dogs are not jumping over any quick brown foxes today. They are too lazy.
+
+Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages. Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages. Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages. Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages. Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages. Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages. Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages. Lauren Ipsum was a Latin girl back in the day when people spoke such fancy languages. She, and her family with her, helped build the lingual foundation for a dozen or more languages.
+
+Here is the site where I write about things and stuff. This is the welcome page formatted like a blog post to default back to.
+There is another line. And another sentence. The sleeping dogs are not jumping over any quick brown foxes today. They are too lazy. Here is the site where I write about things and stuff. This is the welcome page formatted like a blog post to default back to. There is another line. And another sentence. The sleeping dogs are not jumping over any quick brown foxes today. They are too lazy.

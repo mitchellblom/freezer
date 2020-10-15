@@ -7,20 +7,15 @@
     </title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/defaults.css') }}">
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    {% block html_head %}{% endblock %}
   </head>
   <body>
-    <header>
+    <header class="centerText">
       <h1><a href="/">Becoming the Atlas</a></h1>
     </header>
     <div id="content">
       {% block content %}{% endblock %}
-    </div>
-    <div id="footer">
-      {% block footer %}
-      &copy; Copyright 2020</a>.
-      {% endblock %}
     </div>
   </body>
 </html>

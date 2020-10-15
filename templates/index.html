@@ -2,23 +2,23 @@
 
 {% block content %}
 
-<p>Where I've been and my commentary on those experiences.</p>
+<h4 class="centerText">Where I've been and my commentary on those experiences.</h4>
 
-<table border="2px">
+<!-- map object -->
+<div id="map"></div>
+<!-- map logic -->
+<script src="{{url_for('static', filename='map.js')}}" type="module"></script>
+
+<!-- blogroll from markdown files -->
+<table border="2px" class="articleTable">
     <thead>
         <tr>
-            <td>Atlas Files</td>
+            <td class="centerText bold">Atlas Files</td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Search for content"></input></td>
         </tr>
     </thead>
-
-    <!-- map object -->
-    <div id="map" style="height: 400px; width: 1250px; float: left; margin: 1%;"></div>
-
-    <!-- map logic -->
-    <script src="{{url_for('static', filename='map.js')}}" type="module"></script>
-
-    <!-- blogroll from markdown files -->
-    <div style="float: right; margin: 1%;">
         {% for page in pages %}
         <tr>
             <td> 
@@ -26,17 +26,12 @@
             </td>
         </tr>
         {% endfor %}
-    </div>
-  
 </table>
 
-{% if page %}
+{% macro showArticle(page) -%}
+    {% include 'partials/article.html' %}
+{% endmacro %}
 
-<h1> {{ page.title }} </h1>
-<small> Published on {{ page.date.strftime('%A, %d %B, %Y') }} </small>
-<br>
-{{ page.html|safe }}
-
-{% endif %}
+<div class="article">{{ showArticle(page) }}</div>
 
 {% endblock %}

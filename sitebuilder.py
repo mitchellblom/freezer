@@ -16,15 +16,14 @@ freezer = Freezer(app)
 
 @app.route("/")
 def index():
-    return render_template('index.html', pages=pages)
+    page = pages.get_or_404('welcome')
+    return render_template('index.html', pages=pages, page=page)
 
 
 @app.route("/<path:path>.html")
 def page(path):
-    if path:
-        page = pages.get_or_404(path)
-        return render_template('index.html', pages=pages, page=page)
-    return render_template('index.html', pages=pages)
+    page = pages.get_or_404(path)
+    return render_template('index.html', pages=pages, page=page)
 
 
 @freezer.register_generator
