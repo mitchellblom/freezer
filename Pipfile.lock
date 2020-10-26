@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ad1401a04597c6f1725da55b962aa5b5dd8ab799da9996041e7e83f9b56f0490"
+            "sha256": "f8251436ae5a5dfb02ba17af79fba7e3db7c5e1b37f214cd21073ac4b62e02ff"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -40,6 +40,13 @@
             "index": "pypi",
             "version": "==0.7.1"
         },
+        "flask-sijax": {
+            "hashes": [
+                "sha256:fb2bf2d4f75408185102195055d75549fee8d9c9e954dca2427186925cdc429f"
+            ],
+            "index": "pypi",
+            "version": "==0.4.1"
+        },
         "frozen-flask": {
             "hashes": [
                 "sha256:0a7a71334210ce84f8cbd1dc23c8b265d3e21748805c09c77d0e6fbcc4faab14",
@@ -47,6 +54,12 @@
             ],
             "index": "pypi",
             "version": "==0.15"
+        },
+        "future": {
+            "hashes": [
+                "sha256:b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"
+            ],
+            "version": "==0.18.2"
         },
         "itsdangerous": {
             "hashes": [
@@ -135,6 +148,19 @@
             ],
             "index": "pypi",
             "version": "==5.3"
+        },
+        "sijax": {
+            "hashes": [
+                "sha256:11b062f4a8b2aad95c87e7c09e5daf5a6b0d0f08abf9efe5f91a0075c6be7c0d"
+            ],
+            "version": "==0.3.2"
+        },
+        "six": {
+            "hashes": [
+                "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259",
+                "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+            ],
+            "version": "==1.15.0"
         },
         "werkzeug": {
             "hashes": [

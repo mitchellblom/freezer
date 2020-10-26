@@ -1,8 +1,10 @@
+import os
 import sys
 
-from flask import Flask, render_template, url_for
+from flask import Flask, g, render_template, url_for
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
+import flask_sijax
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -13,10 +15,24 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 
+path = os.path.join('.', os.path.dirname(__file__), 'static/js/sijax/')
 
-@app.route("/")
+app.config['SIJAX_STATIC_PATH'] = path
+app.config['SIJAX_JSON_URI'] = '/static/js/sijax/json2.js'
+flask_sijax.Sijax(app)
+
+
+@app.route("/", methods=['GET', 'POST'])
 def index():
     page = pages.get_or_404('welcome')
+
+    def say_hi(obj_response):
+        obj_response.alert('Hi there!')
+    if g.sijax.is_sijax_request:
+        # Sijax request detected - let Sijax handle it
+        g.sijax.register_callback('say_hi', say_hi)
+        return g.sijax.process_request()
+        
     return render_template('index.html', pages=pages, page=page)
 
 
