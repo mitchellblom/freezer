@@ -12,21 +12,25 @@
     <!-- jq -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-      $(document).ready( function() {
-          $('#next').click(function(whichLinkClicked = 'first') {
-            $.ajax(`{{ url_for('page', path='first') }}`).done(function (reply) {
+      $(document).ready( function () {
+          $('.articleToShow').click(function(e) {
+            pathValue = e.target.name
+            let defaultUrl = "{{ url_for('page', path='welcome') }}"
+            let pathBasedUrl = defaultUrl.replace(/welcome/, pathValue)
+            $.ajax(pathBasedUrl).done(function (reply) {
                 $('#articleFromAjax').html(reply);
             });
           });
       });
     </script>
+
     <!-- styles -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/defaults.css') }}">
   </head>
   <body>
     <header class="centerText">
       <h1><a href="/">Becoming the Atlas</a></h1>
-      <a href="#" id="next">Click here to test jq</a>
+      <a href="#" class="articleToShow">Click here to test jq</a>
     </header>
     <div id="content">
       {% block content %}{% endblock %}
