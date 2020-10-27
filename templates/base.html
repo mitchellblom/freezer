@@ -9,29 +9,24 @@
     <!-- leaflet -->
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <!-- sijax -->
+    <!-- jq -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/static/js/sijax/sijax.js"></script>
-    <script type="text/javascript">{{ g.sijax.get_js()|safe }}</script> 
-
     <script>
       $(document).ready( function() {
           $('#next').click(function(whichLinkClicked = 'first') {
-            $.ajax(`{{ url_for('page_sijax', path='first') }}`).done(function (reply) {
+            $.ajax(`{{ url_for('page', path='first') }}`).done(function (reply) {
                 $('#articleFromAjax').html(reply);
             });
           });
       });
     </script>
-
     <!-- styles -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/defaults.css') }}">
   </head>
   <body>
     <header class="centerText">
       <h1><a href="/">Becoming the Atlas</a></h1>
-      <a href="javascript://" onclick="Sijax.request('say_hi');">Click here for hello</a>
-      <a href="#" id="next">Click here for next</a>
+      <a href="#" id="next">Click here to test jq</a>
     </header>
     <div id="content">
       {% block content %}{% endblock %}
