@@ -11,26 +11,13 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <!-- jq -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
-      $(document).ready( function () {
-          $('.articleToShow').click(function(e) {
-            pathValue = e.target.name
-            let defaultUrl = "{{ url_for('page', path='welcome') }}"
-            let pathBasedUrl = defaultUrl.replace(/welcome/, pathValue)
-            $.ajax(pathBasedUrl).done(function (reply) {
-                $('#articleFromAjax').html(reply);
-            });
-          });
-      });
-    </script>
-
+    <script src="{{url_for('static', filename='js/articleAjax.js')}}" type="module"></script>
     <!-- styles -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/defaults.css') }}">
   </head>
   <body>
     <header class="centerText">
       <h1><a href="/">Becoming the Atlas</a></h1>
-      <a href="#" class="articleToShow">Click here to test jq</a>
     </header>
     <div id="content">
       {% block content %}{% endblock %}
