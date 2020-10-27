@@ -18,7 +18,7 @@
       $(document).ready( function() {
           $('#next').click(function(whichLinkClicked = 'first') {
             $.ajax(`{{ url_for('page_sijax', path='first') }}`).done(function (reply) {
-                $('#ajax-example').html(reply);
+                $('#articleFromAjax').html(reply);
             });
           });
       });
@@ -36,6 +36,6 @@
     <div id="content">
       {% block content %}{% endblock %}
     </div>
-    <div id="ajax-example"></div>
+    <div id="articleFromAjax"></div>
   </body>
 </html>
