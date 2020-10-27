@@ -2,30 +2,40 @@
 
 {% block content %}
 
-<h4 class="centerText">Where I've been and my commentary on those experiences.</h4>
-
 <!-- map object -->
 <div id="map"></div>
+<!-- map control buttons -->
+<div id="controls" style="margin: 15px; float:left;">
+    <button id="togglePinsButton">Toggle Pin Layer</button>
+    <button id="foobar">This Does Nothing</button>
+    <button id="foobar">Neither Does This</button>
+</div>
 <!-- map logic -->
 <script src="{{url_for('static', filename='js/map.js')}}" type="module"></script>
 
 <!-- blogroll from markdown files -->
-<table border="2px" class="articleTable">
-    <thead>
-        <tr>
-            <td class="centerText bold">Atlas Files</td>
-        </tr>
-        <tr>
-            <td><input type="text" placeholder="Search for content"></input></td>
-        </tr>
-    </thead>
-        {% for page in pages %}
-        <tr>
-            <td> 
-                <a href="#" class="articleToShow" name={{ page.path }}> {{ page.title }}</a>
-            </td>
-        </tr>
-        {% endfor %}
-</table>
+<div class="articleTableWrapper">
+    <div class="articleTableScrollable">
+        <table border="2px">
+            <thead>
+                <tr>
+                    <td class="centerText bold">Atlas Files</td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Search for content"></input></td>
+                </tr>
+            </thead>
+                <tbody>
+                    {% for page in pages %}
+                    <tr>
+                        <td> 
+                            <a href="#" class="articleToShow" name={{ page.path }}> {{ page.title }}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+    </div>
+</div>
 
 {% endblock %}

@@ -7,7 +7,7 @@ let defaultZoom = 13
 let map = L.map('map').setView(defaultCoords, defaultZoom);
 
 // Display pinsGeoJson data on the map
-L.geoJson(pinsGeoJson, {
+let pinsLayer = L.geoJson(pinsGeoJson, {
     style: function(feature) {
         return {color: feature.properties.Colour};
     },
@@ -15,7 +15,9 @@ L.geoJson(pinsGeoJson, {
         return new L.CircleMarker(latlng, markerDefault);
     },
     onEachFeature: onEachDot
-}).addTo(map);
+})
+
+map.addLayer(pinsLayer)
 
 // {s}, {z}, {x} and {y} are placeholders for map tiles
 // {x} and {y} are the x/y of where you are on the map
@@ -26,3 +28,15 @@ let titleLayer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}
 });
 
 map.addLayer(titleLayer);
+
+// Toggle Pins
+$("#togglePinsButton").click(function(event) {
+    event.preventDefault();
+    if(map.hasLayer(pinsLayer)) {
+        $(this).removeClass('selected');
+        map.removeLayer(pinsLayer);
+    } else {
+        map.addLayer(pinsLayer);        
+        $(this).addClass('selected');
+   }
+});
