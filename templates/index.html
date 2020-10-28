@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 
-{% block content %}
-
+{% block mapWrapper %}
 <!-- map object -->
 <div id="map"></div>
 <!-- map control buttons -->
-<div id="controls" style="margin: 15px; float:left;">
+<div id="controls">
     <button id="togglePinsButton">Toggle Pin Layer</button>
     <button id="foobar">This Does Nothing</button>
     <button id="foobar">Neither Does This</button>
 </div>
 <!-- map logic -->
 <script src="{{url_for('static', filename='js/map.js')}}" type="module"></script>
+{% endblock %}
 
+{% block blogroll %}
 <!-- blogroll from markdown files -->
 <div class="articleTableWrapper">
     <div class="articleTableScrollable">
@@ -37,5 +38,4 @@
         </table>
     </div>
 </div>
-
 {% endblock %}

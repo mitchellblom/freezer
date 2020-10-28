@@ -7,12 +7,16 @@
     overflow: auto;
 }
 
+#blogroll {
+    float: right;
+    width: 20vw;
+}
+
 .articleTableWrapper {
     overflow: auto;
     flex: right; 
     width: 18vw;
-    height: 50vh;
-    position: relative;
+    height: 100vh;
 }
 
 #article {
@@ -29,8 +33,12 @@
     text-align: center;
 }
 
-#content {
-    height: 50vh;
+#controls {
+    margin: 5px; 
+    max-height: 50px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
 }
 
 html {
@@ -38,6 +46,11 @@ html {
 }
 
 #map {
+    height: 90%;
+    width: 100%;
+}
+
+#mapWrapper {
     height: 50vh;
     width: 75vw;
     float: left;
