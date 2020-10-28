@@ -1,29 +1,4 @@
-.articleTable input {
-    min-width: 96%;
-    max-width: 96%;
-}
-
-.articleTableScrollable {
-    overflow: auto;
-}
-
-#blogroll {
-    float: right;
-    width: 20vw;
-}
-
-.articleTableWrapper {
-    overflow: auto;
-    flex: right; 
-    width: 18vw;
-    height: 100vh;
-}
-
-#article {
-    position: relative;
-    width: 75vw;
-    float: left;
-}
+/* General */
 
 .bold {
     font-weight: bold;
@@ -33,16 +8,47 @@
     text-align: center;
 }
 
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Articles */
+
+.articleTable input {
+    min-width: 96%;
+    max-width: 96%;
+}
+
+.articleTableScrollable {
+    overflow: auto;
+}
+
+.articleTableWrapper {
+    flex: right; 
+    width: 18vw;
+}
+
+#article {
+    position: relative;
+    width: 75vw;
+    float: left;
+}
+
+/* Blogroll */
+
+#blogroll {
+    float: right;
+    max-width: 20vw;
+}
+
+/* Map */
+
 #controls {
     margin: 5px; 
     max-height: 50px;
     position: absolute;
     width: 100%;
     bottom: 0px;
-}
-
-html {
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 #map {
