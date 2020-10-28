@@ -2,7 +2,7 @@
 // Show the welcome article by default.
 window.onload = function () {
     showArticle('welcome')
-    $('.articleToShow').click(function(e) {
+    $('.articleLink').click(function(e) {
         showArticle(e.target.name)
     });
 };
