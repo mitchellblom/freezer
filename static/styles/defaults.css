@@ -72,3 +72,24 @@ html {
     outline-color:black;
     outline-style: solid;
 }
+
+/* Media queries or small screens  */
+
+@media (max-width: 50em) {
+    #mapWrapper {
+        width: 90vw;
+        float: none;
+    }
+
+    #blogroll {
+        float: none;
+        max-width: 20vw;
+        padding: 2% 1%;
+    }
+
+    .articleTableWrapper {
+        flex: none; 
+        width: 90vw;
+    }
+
+  }
