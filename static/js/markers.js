@@ -15,13 +15,11 @@ const markerHighlight = {
 };
 
 let highlightDot = (e) => {
-    var layer = e.target;
-    layer.setStyle(markerHighlight);
+    e.target.setStyle(markerHighlight);
 };
 
 let resetDotHighlight = (e) => {
-    var layer = e.target;
-    layer.setStyle(markerDefault);
+    e.target.setStyle(markerDefault);
 };
 
 let onEachDot = (feature, layer) => {

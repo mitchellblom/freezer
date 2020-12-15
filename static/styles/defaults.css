@@ -73,6 +73,16 @@ html {
     outline-style: solid;
 }
 
+/* Popups */
+
+.leaflet-popup-tip-container {
+    cursor: pointer;
+}
+
+.leaflet-clickable {
+    cursor: pointer;
+}
+
 /* Media queries or small screens  */
 
 @media (max-width: 50em) {

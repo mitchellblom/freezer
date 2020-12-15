@@ -4,7 +4,9 @@ import pinsGeoJson from '../pinsGeoJson.js'
 let firstPinProps = pinsGeoJson.features[0].properties
 let defaultCoords = [firstPinProps.latitude, firstPinProps.longitude]
 let defaultZoom = 13
-let map = L.map('map').setView(defaultCoords, defaultZoom);
+let map = L.map('map', {
+        preferCanvas: true
+    }).setView(defaultCoords, defaultZoom);
 
 // Display pinsGeoJson data on the map
 let pinsLayer = L.geoJson(pinsGeoJson, {
