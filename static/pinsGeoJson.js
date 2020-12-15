@@ -6,6 +6,7 @@ export default {
             "properties": {
                 "name": "Dunkin Donuts",
                 "address": "1 Broadway #1, Cambridge, MA 02142",
+                "article": "3",
                 "latitude": 42.362504,
                 "longitude": -71.083372,
                 "Colour": "#0000FF"
@@ -20,6 +21,7 @@ export default {
             "properties": {
                 "name": "Starbucks",
                 "address": "6 Cambridge Center, Cambridge, MA 02142",
+                "article": "4",
                 "latitude": 42.363884,
                 "longitude": -71.087749,
                 "Colour": "#0000FF"

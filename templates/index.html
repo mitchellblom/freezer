@@ -16,8 +16,8 @@
 {% block blogroll %}
 <!-- blogroll from markdown files -->
 <div class="articleTableWrapper">
-        <table border="2px">
-            <div class="articleTableScrollable">
+    <table border="2px">
+        <div class="articleTableScrollable">
             <thead>
                 <tr>
                     <td class="centerText bold">Atlas Files</td>
@@ -26,16 +26,16 @@
                     <td><input type="text" placeholder="Search for content"></input></td>
                 </tr>
             </thead>
-                <tbody>
-                    {% for page in pages | sort(attribute='title') %}
-                    <tr>
-                        <td> 
-                            <a href="#" class="articleLink" name={{ page.path }}> {{ page.title }}</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+            <tbody>
+                {% for page in pages | sort(attribute='title') %}
+                <tr>
+                    <td class="articleCoords" articleId={{ page.articleId }}> 
+                        <a href="#" class="articleLink" name={{ page.path }}> {{ page.title }}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </div>
-        </table>
+    </table>
 </div>
 {% endblock %}

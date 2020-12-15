@@ -1,6 +1,7 @@
 title: Welcome to Becoming the Atlas
 date: 2020-10-15
 category: welcome
+articleId: "0"
 
 Here is the site where I write about things and stuff. This is the welcome page formatted like a blog post to default back to.
 There is another line. And another sentence. The sleeping dogs are not jumping over any quick brown foxes today. They are too lazy.

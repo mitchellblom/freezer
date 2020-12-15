@@ -14,11 +14,19 @@ const markerHighlight = {
     fillOpacity: 0.75
 };
 
-let highlightDot = (e) => {
+function highlightDot(e) {
+    // get article id from pin
+    let articleId = e.target.feature.properties.article
+    // highlight associated article in blogroll
+    $(`.articleCoords[articleId="${articleId}"]`).addClass('articlePinHover')
     e.target.setStyle(markerHighlight);
 };
 
 let resetDotHighlight = (e) => {
+    // get article id from pin
+    let articleId = e.target.feature.properties.article
+    // un-highlight associated article in blogroll
+    $(`.articleCoords[articleId="${articleId}"]`).removeClass('articlePinHover')
     e.target.setStyle(markerDefault);
 };
 

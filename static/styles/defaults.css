@@ -26,6 +26,11 @@ html {
     text-decoration: none;
 }
 
+.articlePinHover {
+    font-weight: bold;
+    color: rgba(0, 255, 13, 0.342);
+}
+
 .articleTable input {
     min-width: 96%;
     max-width: 96%;
