@@ -1,9 +1,9 @@
-import { markerDefault, onEachDot } from '../js/markers.js';
+import { markerDefault, onEachDot, highlightDot, resetDotHighlight } from '../js/markers.js';
 import pinsGeoJson from '../pinsGeoJson.js'
 
 let firstPinProps = pinsGeoJson.features[0].properties
 let defaultCoords = [firstPinProps.latitude, firstPinProps.longitude]
-let defaultZoom = 13
+let defaultZoom = 2
 let map = L.map('map', {
         preferCanvas: true
     }).setView(defaultCoords, defaultZoom);
@@ -41,4 +41,25 @@ $("#togglePinsButton").click(function(event) {
         map.addLayer(pinsLayer);        
         $(this).addClass('selected');
    }
+});
+
+// Hover over article in blogroll, highlight its matching pin/s
+$('.articleEntry').hover(function(e) {
+    let articleId = e.currentTarget.attributes.articleid.value
+    console.log(articleId);
+    // reduce pinsLayer to only features (pins) with matching articleId
+    let allPins = pinsLayer._layers;
+    let acceptedValues = [articleId]
+
+    let matchingPins = Object.keys(allPins).reduce(function(r, pin) {
+        let pinArticleId = allPins[pin].feature.properties.article
+        if (acceptedValues.includes(pinArticleId)) {
+            r = allPins[pin]
+            return r
+        }
+    }, {})
+
+    console.log(matchingPins)
+    // for each matching pin, highlight the pin
+    // highlightDot(allPins[pin].feature)
 });

@@ -14,11 +14,11 @@ const markerHighlight = {
     fillOpacity: 0.75
 };
 
-function highlightDot(e) {
+let highlightDot = (e) => {
     // get article id from pin
     let articleId = e.target.feature.properties.article
     // highlight associated article in blogroll
-    $(`.articleCoords[articleId="${articleId}"]`).addClass('articlePinHover')
+    $(`.articleEntry[articleId="${articleId}"]`).addClass('articlePinHover')
     e.target.setStyle(markerHighlight);
 };
 
@@ -26,7 +26,7 @@ let resetDotHighlight = (e) => {
     // get article id from pin
     let articleId = e.target.feature.properties.article
     // un-highlight associated article in blogroll
-    $(`.articleCoords[articleId="${articleId}"]`).removeClass('articlePinHover')
+    $(`.articleEntry[articleId="${articleId}"]`).removeClass('articlePinHover')
     e.target.setStyle(markerDefault);
 };
 
@@ -52,4 +52,4 @@ let onEachDot = (feature, layer) => {
     </table>`);
 };
 
-export {markerDefault, onEachDot}
+export {highlightDot, markerDefault, onEachDot, resetDotHighlight}

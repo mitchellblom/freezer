@@ -29,7 +29,7 @@
             <tbody>
                 {% for page in pages | sort(attribute='title') %}
                 <tr>
-                    <td class="articleCoords" articleId={{ page.articleId }}> 
+                    <td class="articleEntry" articleId={{ page.articleId }}> 
                         <a href="#" class="articleLink" name={{ page.path }}> {{ page.title }}</a>
                     </td>
                 </tr>
