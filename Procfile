@@ -1,1 +1,1 @@
-web: gunicorn app:sitebuilder --log-file -
+web: gunicorn sitebuilder --log-file -
