@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block mapWrapper %}
+{% block mapwrapper %}
 <!-- map object -->
 <div id="map"></div>
 <!-- map control buttons -->
@@ -15,12 +15,12 @@
 
 {% block blogroll %}
 <!-- blogroll from markdown files -->
-<div class="articleTableWrapper">
+<div class="article-table-wrapper">
     <table border="2px">
-        <div class="articleTableScrollable">
+        <div class="article-table-scrollable">
             <thead>
                 <tr>
-                    <td class="centerText bold">Atlas Files</td>
+                    <td class="text-center bold blogroll-title">Atlas Files</td>
                 </tr>
                 <tr>
                     <td><input type="text" placeholder="Search for content"></input></td>
@@ -30,7 +30,7 @@
                 {% for page in pages | sort(attribute='title') %}
                 <tr>
                     <td class="articleEntry" articleId={{ page.articleId }}> 
-                        <a href="#" class="articleLink" name={{ page.path }}> {{ page.title }}</a>
+                        <a href="#" class="article-link" name={{ page.path }}> {{ page.title }}</a>
                     </td>
                 </tr>
                 {% endfor %}

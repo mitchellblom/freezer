@@ -20,12 +20,12 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/defaults.css') }}">
   </head>
   <body>
-    <header class="centerText">
+    <header class="text-center">
       <h1><a href="/">Becoming the Atlas</a></h1>
     </header>
-    <h4 class="centerText">Where I've been and my commentary on those experiences.</h4>
-    <div id="mapWrapper">
-      {% block mapWrapper %}{% endblock %}
+    <h4 class="text-center">Where I've been and my commentary on those experiences.</h4>
+    <div id="mapwrapper">
+      {% block mapwrapper %}{% endblock %}
     </div>
     <div id="blogroll">
       {% block blogroll %}{% endblock %}

@@ -4,7 +4,7 @@
     font-weight: bold;
 }
 
-.centerText {
+.text-center {
     text-align: center;
 }
 
@@ -21,26 +21,26 @@ html {
     margin: 0% 2%;
 }
 
-.articleLink {
-    font-size: small;
+.article-link {
+    font-size: 14pt;
     text-decoration: none;
 }
 
-.articlePinHover {
+.article-pin-hover {
     font-weight: bold;
     color: rgba(0, 255, 13, 0.342);
 }
 
-.articleTable input {
+.article-table input {
     min-width: 96%;
     max-width: 96%;
 }
 
-.articleTableScrollable {
+.article-table-scrollable {
     overflow: auto;
 }
 
-.articleTableWrapper {
+.article-table-wrapper {
     flex: right; 
     width: 18vw;
 }
@@ -51,6 +51,11 @@ html {
     float: right;
     max-width: 20vw;
     margin: 0% .5%
+}
+
+.blogroll-title {
+    font-size: 16pt;
+    font-weight: bold;
 }
 
 /* Map */
@@ -68,7 +73,7 @@ html {
     width: 100%;
 }
 
-#mapWrapper {
+#mapwrapper {
     height: 50vh;
     width: 75vw;
     float: left;
@@ -91,7 +96,7 @@ html {
 /* Media queries or small screens  */
 
 @media (max-width: 50em) {
-    #mapWrapper {
+    #mapwrapper {
         width: 90vw;
         float: none;
     }
@@ -102,7 +107,7 @@ html {
         padding: 2% 1%;
     }
 
-    .articleTableWrapper {
+    .article-table-wrapper {
         flex: none; 
         width: 90vw;
     }

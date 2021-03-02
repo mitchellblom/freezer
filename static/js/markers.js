@@ -18,7 +18,7 @@ let highlightDot = (e) => {
     // get article id from pin
     let articleId = e.target.feature.properties.article
     // highlight associated article in blogroll
-    $(`.articleEntry[articleId="${articleId}"]`).addClass('articlePinHover')
+    $(`.articleEntry[articleId="${articleId}"]`).addClass('article-pin-hover')
     e.target.setStyle(markerHighlight);
 };
 
@@ -26,7 +26,7 @@ let resetDotHighlight = (e) => {
     // get article id from pin
     let articleId = e.target.feature.properties.article
     // un-highlight associated article in blogroll
-    $(`.articleEntry[articleId="${articleId}"]`).removeClass('articlePinHover')
+    $(`.articleEntry[articleId="${articleId}"]`).removeClass('article-pin-hover')
     e.target.setStyle(markerDefault);
 };
 
