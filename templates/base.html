@@ -16,14 +16,14 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="{{url_for('static', filename='js/articleAjax.js')}}" type="module"></script>
     <!-- styles -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/defaults.css') }}">
   </head>
   <body>
     <header class="text-center">
-      <h1><a href="/">Becoming the Atlas</a></h1>
+      <a href="/"><img src="static/images/bta_logo1.jpg" alt="BTA logo" width="450" height="100" /></a>
     </header>
-    <h4 class="text-center">Where I've been and my commentary on those experiences.</h4>
+    <h4 class="text-center text-subheader">Where I've been and my commentary on those experiences.</h4>
     <div id="mapwrapper">
       {% block mapwrapper %}{% endblock %}
     </div>

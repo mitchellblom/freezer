@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.text-subheader {
+    margin-top: -10px;
+}
+
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
